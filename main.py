@@ -52,11 +52,11 @@ class Test:
                     pass
 
         return questions
-
-if __name__ == "__main__":
+    
+def plot():
     
     results = np.zeros(52)
-    for i in range(1000):
+    for i in range(1000000):
         test = Test()
         questions = test.pick_proofs() + test.pick_trivials()
         for question in questions:
@@ -100,4 +100,7 @@ if __name__ == "__main__":
     plt.savefig("question_frequency.png")
     
     
-    
+if __name__ == "__main__":
+
+    print(Test().pick_proofs())
+    print(Test().pick_trivials())
